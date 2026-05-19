@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Syne:wght@500;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+.site-footer {
+    background: #111625; /* Dark navy slate background */
+    color: #cbd5e1; /* Slate text color */
+    padding: 80px 80px 0 80px; /* Top and sides padding, 0 bottom padding so the bottom bar sits flush */
+    border-top: 2px solid #cfa73c; /* Solid gold top line */
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 50px;
+}
+
+.footer-col h3 {
+    font-family: 'Playfair Display', serif; /* Serif typography for headings */
+    color: #ffffff; /* Crisp white */
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+}
+
+/* Brand Column styling */
+.brand-col .footer-logo {
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.brand-col .footer-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.brand-desc {
+    font-size: 14px;
+    line-height: 26px;
+    color: #94a3b8; /* Lighter slate gray */
+    margin-bottom: 25px;
+}
+
+/* Social links styling */
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08); /* Solid dark translucent circle */
+    color: #ffffff; /* White icons */
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.social-icon svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #cfa73c;
+    color: #111625;
+    transform: translateY(-3px);
+}
+
+.social-icon:hover svg {
+    transform: scale(1.1);
+}
+
+/* Quick links and list stylings */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 14px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #cbd5e1; /* Slate blue-gray */
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff; /* Brighten to white on hover */
+    transform: translateX(3px);
+}
+
+/* Contact Info list */
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px !important;
+    font-size: 14px;
+    line-height: 24px;
+    color: #cbd5e1;
+}
+
+.get-in-touch-label {
+    color: #cbd5e1 !important;
+    font-size: 15px !important;
+    font-weight: 500;
+    margin-bottom: 16px !important;
+    display: block !important;
+}
+
+.contact-list li svg {
+    color: #cbd5e1; /* White/slate icons instead of gold */
+    flex-shrink: 0;
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+    background: #0b0f19; /* Very dark navy bar */
+    margin: 60px -80px 0 -80px; /* Stretch to edge over the padding */
+    padding: 25px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-bottom-links a {
+    text-decoration: none;
+    color: #64748b;
+    transition: color 0.3s;
+}
+
+.footer-bottom-links a:hover {
+    color: #cbd5e1;
+}
+
+/* Responsive collapse rules */
+@media(max-width: 992px) {
+    .site-footer {
+        padding: 60px 40px 0 40px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        margin: 60px -40px 0 -40px;
+        padding: 25px 40px;
+    }
+}
+
+@media(max-width: 576px) {
+    .site-footer {
+        padding: 50px 20px 0 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin: 40px -20px 0 -20px;
+        padding: 25px 20px;
+    }
+}

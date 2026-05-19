@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stackly Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+  <section class="login-container">
+
+    <div class="overlay"></div>
+
+    <form class="login-box" novalidate>
+
+      <div class="login-header-top">
+        <a href="index.html" class="back-to-home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Home
+        </a>
+      </div>
+
+      <h1>Welcome Back</h1>
+      <p>Sign in to access your account</p>
+
+      <div class="role-selection">
+        <label class="role-card active" onclick="selectRole(this)">
+          <input type="radio" name="role" value="client" checked style="display:none;">
+          <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          </div>
+          <span>Client</span>
+        </label>
+        
+        <label class="role-card" onclick="selectRole(this)">
+          <input type="radio" name="role" value="admin" style="display:none;">
+          <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <span>Admin</span>
+        </label>
+      </div>
+
+      <input type="email" id="email" placeholder="Email Address" required>
+      <div class="error-text" id="email-error"></div>
+
+      <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="button" class="toggle-password" aria-label="Toggle Password Visibility">
+          <!-- Eye Open Icon -->
+          <svg class="eye-icon eye-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <!-- Eye Closed Icon (Hidden by Default) -->
+          <svg class="eye-icon eye-closed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="display: none;">
+            <path
+              d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24">
+            </path>
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="error-text" id="password-error"></div>
+
+      <div class="remember">
+        <label>
+          <input type="checkbox">
+          Remember Me
+        </label>
+
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <a href="/404.html"><button type="submit" class="submit-btn">Login</button></a>
+
+      <div class="bottom-text">
+        Don't have an account?
+        <a href="register.html">Sign Up</a>
+      </div>
+
+    </form>
+
+  </section>
+
+  <script>
+    const loginForm = document.querySelector('.login-box');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+    const togglePasswordBtn = document.querySelector('.toggle-password');
+
+    // Toggle Password Visibility Logic
+    togglePasswordBtn.addEventListener('click', function () {
+      const eyeOpen = this.querySelector('.eye-open');
+      const eyeClosed = this.querySelector('.eye-closed');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeOpen.style.display = 'none';
+        eyeClosed.style.display = 'block';
+      } else {
+        passwordInput.type = 'password';
+        eyeOpen.style.display = 'block';
+        eyeClosed.style.display = 'none';
+      }
+    });
+
+    // Custom Validation Logic
+    loginForm.addEventListener('submit', function (e) {
+      let isValid = true;
+
+      // Validate Email
+      if (!emailInput.value.trim()) {
+        emailError.textContent = '(required field fill)';
+        emailError.style.display = 'block';
+        emailInput.classList.add('input-error');
+        isValid = false;
+      } else {
+        emailError.style.display = 'none';
+        emailInput.classList.remove('input-error');
+      }
+
+      // Validate Password
+      if (!passwordInput.value.trim()) {
+        passwordError.textContent = '(required field fill)';
+        passwordError.style.display = 'block';
+        passwordInput.classList.add('input-error');
+        isValid = false;
+      } else {
+        passwordError.style.display = 'none';
+        passwordInput.classList.remove('input-error');
+      }
+
+      if (!isValid) {
+        e.preventDefault(); // Stop form submission
+      }
+    });
+
+    // Clear Validation Errors on Input
+    emailInput.addEventListener('input', function () {
+      if (emailInput.value.trim()) {
+        emailError.style.display = 'none';
+        emailInput.classList.remove('input-error');
+      }
+    });
+
+    passwordInput.addEventListener('input', function () {
+      if (passwordInput.value.trim()) {
+        passwordError.style.display = 'none';
+        passwordInput.classList.remove('input-error');
+      }
+    });
+
+    // Role Selection Logic
+    function selectRole(element) {
+      document.querySelectorAll('.role-card').forEach(card => card.classList.remove('active'));
+      element.classList.add('active');
+      element.querySelector('input[type="radio"]').checked = true;
+    }
+  </script>
+
+</body>
+
+</html>
