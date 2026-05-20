@@ -52,7 +52,8 @@ function bindDashboardHamburgerMenu() {
         }
         
         // Hamburger click handler
-        hamburger.addEventListener("click", (e) => {
+        hamburger.addEventListener("click", function(e) {
+            e.preventDefault();
             e.stopPropagation();
             hamburger.classList.toggle("active");
             sidebar.classList.toggle("active");
@@ -70,6 +71,17 @@ function bindDashboardHamburgerMenu() {
                 document.body.style.overflow = "";
             });
         });
+
+        // Close sidebar when the close button is clicked
+        const sidebarClose = document.querySelector(".sidebar-close");
+        if (sidebarClose) {
+            sidebarClose.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                sidebar.classList.remove("active");
+                overlay.classList.remove("active");
+                document.body.style.overflow = "";
+            });
+        }
 
         // Close sidebar when overlay is clicked
         overlay.addEventListener("click", () => {
@@ -156,6 +168,28 @@ function bindMobileMenu() {
     }
 }
 
+// Function to hide the current page link from the footer Quick Links
+function updateFooterLinks() {
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const footerCols = document.querySelectorAll(".site-footer .footer-col");
+    
+    footerCols.forEach(col => {
+        const h3 = col.querySelector("h3");
+        if (h3 && h3.textContent.trim() === "Quick Links") {
+            const links = col.querySelectorAll("ul li a");
+            links.forEach(link => {
+                const href = link.getAttribute("href");
+                if (href) {
+                    const linkPath = href.split("/").pop();
+                    if (linkPath === currentPath || ((currentPath === "" || currentPath === "/") && linkPath === "index.html")) {
+                        link.parentElement.style.display = 'none';
+                    }
+                }
+            });
+        }
+    });
+}
+
 // Function to dynamically load the common footer
 function loadFooter() {
     const footerContainer = document.getElementById("footer-container");
@@ -164,7 +198,10 @@ function loadFooter() {
             .then(response => response.text())
             .then(data => {
                 footerContainer.innerHTML = data;
+                updateFooterLinks();
             });
+    } else {
+        updateFooterLinks();
     }
 }
 
@@ -179,6 +216,16 @@ function initNavbar() {
 
 // Global scroll event listener
 window.addEventListener("scroll", handleScroll);
+
+// Prevent CSS transition flashes on window resize (fixes mobile menu flash when inspecting/resizing)
+let resizeTimer;
+window.addEventListener("resize", () => {
+    document.body.classList.add("resize-animation-stopper");
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        document.body.classList.remove("resize-animation-stopper");
+    }, 400);
+});
 
 // MutationObserver to run initialization automatically as soon as the navbar is fetched and loaded in any page
 const observer = new MutationObserver((mutations) => {
@@ -196,10 +243,17 @@ observer.observe(document.body, {
 });
 
 // Initial runs to support pages where navbar is pre-rendered or fast-loaded
-document.addEventListener("DOMContentLoaded", initNavbar);
-if (document.readyState === "complete" || document.readyState === "interactive") {
+function ensureInitialization() {
     initNavbar();
 }
+
+document.addEventListener("DOMContentLoaded", ensureInitialization);
+if (document.readyState === "complete" || document.readyState === "interactive") {
+    ensureInitialization();
+}
+
+// Extra safety: Initialize after a short delay to ensure all DOM elements are accessible
+setTimeout(ensureInitialization, 100);
 
 // Global Scroll Reveal Intersection Observer
 function initScrollReveal() {

@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap');
 
-*{
+* {
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+/* Prevent transition flashes on window resize */
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
 }
 
 .navbar{
@@ -226,10 +232,6 @@ nav a.active::after {
 /* Body lock when menu open */
 body.menu-open {
     overflow: hidden !important;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    touch-action: none;
 }
 
 /* Responsive Styles */
