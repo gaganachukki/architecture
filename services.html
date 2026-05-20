@@ -14,9 +14,9 @@
 <!-- HERO -->
 <section class="services-hero">
   <div class="services-hero-content">
-    <h4>What We Offer</h4>
-    <h1>Craft. Vision.<br><span>Expertise.</span></h1>
-    <p>From the first sketch to the final fixture, our full-service studio delivers end-to-end architectural excellence across residential, commercial, and civic typologies.</p>
+    <h4>Comprehensive Expertise</h4>
+    <h1>Defining the<br><span>Built Environment</span></h1>
+    <p>We provide integrated architectural and design services tailored for clients who demand the extraordinary. Every discipline in our studio works in perfect synergy.</p>
   </div>
 </section>
 
@@ -30,12 +30,12 @@
       <div class="service-num">01</div>
       <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
       <h3>Architectural Design</h3>
-      <p>End-to-end design of residential, commercial, and civic buildings that balance beauty and function at every scale.</p>
+      <p>Transforming complex programmatic requirements into elegant, high-performing structures that define their context and stand the test of time.</p>
       <ul>
-        <li>Concept & schematic design</li>
-        <li>Planning & permitting</li>
-        <li>Construction documentation</li>
-        <li>Site supervision</li>
+        <li>Masterplanning & zoning</li>
+        <li>Conceptual form-finding</li>
+        <li>BIM-driven documentation</li>
+        <li>Construction administration</li>
       </ul>
     </div>
     <div class="service-card">
@@ -101,31 +101,82 @@
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- SECTORS WE SERVE -->
+<section class="sectors-section reveal">
+  <div class="section-label">Our Expertise</div>
+  <h2 class="section-title">Sectors We Serve</h2>
+  <div class="gold-line"></div>
+  <div class="sectors-grid">
+    <div class="sector-card">
+      <img src="assets/a21.webp" alt="Residential Architecture">
+      <div class="sector-overlay">
+        <h3>Luxury Residential</h3>
+        <p>Bespoke private villas and high-end residential towers designed for unparalleled living experiences.</p>
+      </div>
+    </div>
+    <div class="sector-card">
+      <img src="assets/a28.webp" alt="Commercial Architecture">
+      <div class="sector-overlay">
+        <h3>Commercial & Workplace</h3>
+        <p>Innovative corporate headquarters and retail spaces built to inspire productivity and brand identity.</p>
+      </div>
+    </div>
+    <div class="sector-card">
+      <img src="assets/a19.webp" alt="Cultural Architecture">
+      <div class="sector-overlay">
+        <h3>Cultural & Civic</h3>
+        <p>Museums, pavilions, and public institutions that enrich communities and celebrate heritage.</p>
+      </div>
+    </div>
+    <div class="sector-card">
+      <img src="assets/a24.webp" alt="Hospitality Architecture">
+      <div class="sector-overlay">
+        <h3>Hospitality & Wellness</h3>
+        <p>Boutique hotels and wellness retreats focused on serenity, luxury, and seamless guest experiences.</p>
+      </div>
+    </div>
+    <div class="sector-card">
+      <img src="assets/a17.webp" alt="Education Architecture">
+      <div class="sector-overlay">
+        <h3>Educational Facilities</h3>
+        <p>State-of-the-art learning environments designed to foster creativity, collaboration, and growth.</p>
+      </div>
+    </div>
+    <div class="sector-card">
+      <img src="assets/a16.webp" alt="Mixed-Use Architecture">
+      <div class="sector-overlay">
+        <h3>Mixed-Use Developments</h3>
+        <p>Vibrant, multi-functional urban precincts that blend living, working, and leisure effortlessly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
 <section class="process-section">
-  <div class="section-label">How We Work</div>
-  <h2 class="section-title">Our Design Process</h2>
+  <div class="section-label">Our Edge</div>
+  <h2 class="section-title">Advanced Capabilities</h2>
   <div class="gold-line"></div>
   <div class="process-steps">
     <div class="process-step">
-      <div class="step-num">01</div>
-      <h3>Discovery</h3>
-      <p>We listen deeply to understand your vision, lifestyle, constraints, and ambitions before a single line is drawn.</p>
+      <div class="step-num">AI</div>
+      <h3>Parametric Design</h3>
+      <p>Utilizing algorithmic workflows to optimize complex geometries, structural loads, and intricate façade patterning.</p>
     </div>
     <div class="process-step">
-      <div class="step-num">02</div>
-      <h3>Concept</h3>
-      <p>Bold sketches, spatial studies, and mood boards translate your brief into coherent architectural ideas.</p>
+      <div class="step-num">VR</div>
+      <h3>Immersive Pre-viz</h3>
+      <p>Step inside your building before ground is broken. We offer 1:1 scale virtual reality walkthroughs for critical decision making.</p>
     </div>
     <div class="process-step">
-      <div class="step-num">03</div>
-      <h3>Development</h3>
-      <p>Technical drawings, material selections, and 3D models refine the concept into a fully resolved design.</p>
+      <div class="step-num">BIM</div>
+      <h3>Building Info Modeling</h3>
+      <p>Clash detection and intelligent 3D data management ensuring seamless collaboration with engineers and contractors.</p>
     </div>
     <div class="process-step">
-      <div class="step-num">04</div>
-      <h3>Delivery</h3>
-      <p>We oversee every stage of construction to ensure your vision is realized to the letter — on time and on budget.</p>
+      <div class="step-num">CO2</div>
+      <h3>Carbon Modeling</h3>
+      <p>Real-time lifecycle analysis of embodied carbon, helping us select materials that radically reduce environmental impact.</p>
     </div>
   </div>
 </section>
@@ -154,7 +205,7 @@
 <script>
   fetch('navbar.html').then(r=>r.text()).then(d=>{document.getElementById('navbar-container').innerHTML=d;});
   const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
-  document.querySelectorAll('.service-card,.process-step').forEach((el,i)=>{el.style.transitionDelay=i*0.08+'s';obs.observe(el);});
+  document.querySelectorAll('.service-card,.process-step,.sector-card').forEach((el,i)=>{el.style.transitionDelay=(i%6)*0.08+'s';obs.observe(el);});
 </script>
 <script src="script.js"></script>
 </body>

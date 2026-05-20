@@ -6,7 +6,7 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 /* ─── HERO ─────────────────────────────────────────────── */
 .about-hero{
     min-height:100vh;
-    background:url('assets/a2.webp') center/cover no-repeat;
+    background:url('assets/a9.webp') center/cover no-repeat;
     position:relative;
     display:flex;align-items:center;
     padding:160px 80px 80px;
@@ -83,7 +83,7 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 /* ─── TEAM ──────────────────────────────────────────── */
 .team-section{padding:100px 80px;background:#111;}
 .team-header{text-align:center;margin-bottom:60px;}
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
 .team-card{background:#161616;overflow:hidden;border-radius:4px;transition:all .4s;opacity:0;transform:translateY(40px);}
 .team-card.visible{opacity:1;transform:translateY(0);}
 .team-card:hover{transform:translateY(-10px);}

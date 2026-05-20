@@ -41,6 +41,23 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 .service-card ul li{font-size:13px;color:#999;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:8px;}
 .service-card ul li::before{content:'→';color:#cfa73c;font-size:12px;}
 
+/* SECTORS WE SERVE */
+.sectors-section{padding:100px 80px;background:#0a0a0a;}
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px;}
+.sector-card{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/3;opacity:0;transform:translateY(40px);transition:all .5s;}
+.sector-card.visible{opacity:1;transform:translateY(0);}
+.sector-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(0.25, 0.8, 0.25, 1);}
+.sector-card:hover img{transform:scale(1.08);}
+.sector-overlay{
+  position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0) 100%);
+  padding:30px;display:flex;flex-direction:column;justify-content:flex-end;opacity:0.9;transition:opacity .4s;
+}
+.sector-card:hover .sector-overlay{opacity:1;background:linear-gradient(to top,rgba(13,13,13,0.95) 10%,rgba(13,13,13,0.5) 50%,rgba(13,13,13,0.1) 100%);}
+.sector-overlay h3{font-family:'Syne',sans-serif;font-size:24px;color:#fff;margin-bottom:10px;transform:translateY(20px);transition:transform .4s;}
+.sector-overlay p{color:#aaa;font-size:14px;line-height:1.6;transform:translateY(20px);opacity:0;transition:all .4s;}
+.sector-card:hover .sector-overlay h3{transform:translateY(0);}
+.sector-card:hover .sector-overlay p{transform:translateY(0);opacity:1;}
+
 /* PROCESS SECTION */
 .process-section{padding:100px 80px;background:#111;}
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative;}
@@ -72,19 +89,19 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
 @media(max-width:992px){
-  .services-hero,.services-main,.process-section,.feature-banner{padding:160px 40px 80px;}
-  .services-grid{grid-template-columns:1fr 1fr;}
+  .services-hero,.services-main,.process-section,.feature-banner,.sectors-section{padding:160px 40px 80px;}
+  .services-grid,.sectors-grid{grid-template-columns:1fr 1fr;}
   .process-steps{grid-template-columns:1fr 1fr;gap:40px;}
   .process-steps::before{display:none;}
 }
 @media(max-width:768px){
-  .services-hero,.services-main,.process-section,.feature-banner{padding:130px 25px 60px;}
+  .services-hero,.services-main,.process-section,.feature-banner,.sectors-section{padding:130px 25px 60px;}
   .services-hero-content{max-width:100%;}
   .feature-content{max-width:100%;}
 }
 @media(max-width:576px){
-  .services-hero,.services-main,.process-section,.feature-banner{padding:120px 20px 60px;}
-  .services-grid,.process-steps{grid-template-columns:1fr;}
+  .services-hero,.services-main,.process-section,.feature-banner,.sectors-section{padding:120px 20px 60px;}
+  .services-grid,.process-steps,.sectors-grid{grid-template-columns:1fr;}
   .service-card{padding:28px 20px;}
   .feature-btn{padding:13px 28px;font-size:12px;}
 }

@@ -5,7 +5,7 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 
 /* HERO */
 .projects-hero{
-  min-height:100vh;background:url('assets/a1.webp') center/cover no-repeat;
+  min-height:100vh;background:url('assets/a14.webp') center/cover no-repeat;
   position:relative;display:flex;align-items:center;padding:160px 80px 80px;
 }
 .projects-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.9) 50%,rgba(0,0,0,.2));}
@@ -32,7 +32,7 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 
 /* PROJECTS GRID */
 .projects-masonry{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;grid-auto-flow:dense;
 }
 .proj-card{
   position:relative;overflow:hidden;border-radius:2px;cursor:pointer;
@@ -62,7 +62,7 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 .proj-card.large img{height:480px;}
 
 /* AWARDS STRIP */
-.awards-strip{padding:80px;background:#111;display:flex;align-items:center;gap:80px;overflow:hidden;}
+.awards-strip{padding:80px;background:#111;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:80px;overflow:hidden;}
 .award-item{text-align:center;flex-shrink:0;opacity:0;transform:translateY(20px);transition:all .4s;}
 .award-item.visible{opacity:1;transform:translateY(0);}
 .award-num{font-family:'Syne',sans-serif;font-size:48px;color:#cfa73c;font-weight:800;}

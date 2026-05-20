@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - User Dashboard</title>
+  <link rel="stylesheet" href="userdashboard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/logo.webp" alt="Stackly Architecture" style="height: 35px;">
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-view="view-dashboard">DASHBOARD</a>
+        <a href="#" class="nav-item" data-view="view-projects">MY PROJECTS</a>
+        <a href="#" class="nav-item" data-view="view-invoices">INVOICES</a>
+        <a href="#" class="nav-item" data-view="view-consultations">CONSULTATIONS</a>
+        <a href="#" class="nav-item" data-view="view-saved">SAVED DESIGNS</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="login.html" class="logout-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          LOGOUT
+        </a>
+        <a href="contact.html" class="sidebar-btn">NEW PROJECT</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="user-profile">
+          <div class="user-info">
+            <span class="user-email">client@stackly.com</span>
+            <span class="user-role">PREMIUM CLIENT</span>
+          </div>
+          <div class="user-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- VIEW: DASHBOARD -->
+      <div id="view-dashboard" class="view-section active">
+        <div class="content-header">
+        <div class="welcome-text">
+          <span class="welcome-label">WELCOME BACK</span>
+          <h1>Hey, Client 👋</h1>
+          <p>Let's build your dream space.</p>
+        </div>
+      </div>
+
+      <div class="content-title-row">
+        <div class="title-left">
+          <h2>Your Stackly Hub</h2>
+          <p>Track your project progress and upcoming milestones.</p>
+        </div>
+        <a href="project.html" class="view-btn">VIEW PORTFOLIO</a>
+      </div>
+
+      <div class="metrics-grid">
+        <!-- Card 1 -->
+        <div class="metric-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4b05b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <span class="card-status status-active">Active</span>
+          </div>
+          <div class="card-body">
+            <p>Current Projects</p>
+            <h3>01</h3>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="metric-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+            </div>
+            <span class="card-status status-pending">Pending</span>
+          </div>
+          <div class="card-body">
+            <p>Pending Invoices</p>
+            <h3>$15,000</h3>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="metric-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </div>
+            <span class="card-status status-text">12 Added</span>
+          </div>
+          <div class="card-body">
+            <p>Saved Inspirations</p>
+            <h3>12 Items</h3>
+          </div>
+        </div>
+
+        <!-- Card 4 (Gold Feature) -->
+        <div class="metric-card card-featured">
+          <div class="card-header">
+            <div class="card-icon icon-dark">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>Next Consultation</p>
+            <h3>Tomorrow<br>10:00 AM</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-bottom-row">
+        <div class="chart-container">
+          <h3>Project Progress (%)</h3>
+          <div class="bar-chart">
+            <div class="bar-col">
+              <div class="bar" style="--target-height: 20%; animation-delay: 0.1s;"></div>
+              <span>Design</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar" style="--target-height: 45%; animation-delay: 0.2s;"></div>
+              <span>Permits</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar" style="--target-height: 70%; animation-delay: 0.3s;"></div>
+              <span>Build</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar" style="--target-height: 95%; animation-delay: 0.4s;"></div>
+              <span>Interior</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar" style="--target-height: 100%; animation-delay: 0.5s;"></div>
+              <span>H-Over</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="recent-activity">
+          <h3>Recent Updates</h3>
+          <ul class="activity-list">
+            <li>
+              <div class="act-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <div class="act-details">
+                <h4>Invoice #1042</h4>
+                <p>Payment received</p>
+              </div>
+              <span class="act-time">1d ago</span>
+            </li>
+            <li>
+              <div class="act-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </div>
+              <div class="act-details">
+                <h4>Consultation</h4>
+                <p>Scheduled for tomorrow</p>
+              </div>
+              <span class="act-time">2d ago</span>
+            </li>
+            <li>
+              <div class="act-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <div class="act-details">
+                <h4>Floorplan V2</h4>
+                <p>Approved by architect</p>
+              </div>
+              <span class="act-time">4d ago</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div> <!-- End view-dashboard -->
+
+      <!-- VIEW: MY PROJECTS -->
+      <div id="view-projects" class="view-section">
+        <div class="tab-header">
+          <h2>My Projects</h2>
+          <p>Track the progress of your active and completed builds.</p>
+        </div>
+        <div class="dash-grid">
+          <div class="dash-card">
+            <img src="assets/a4.webp" alt="Project" class="dash-card-img">
+            <div class="dash-card-body">
+              <span class="status-badge progress">In Progress</span>
+              <h3 class="dash-card-title" style="margin-top: 15px;">The Obsidian Villa</h3>
+              <p class="dash-card-meta">Location: Swiss Alps<br>Stage: Structural Framing</p>
+              <a href="#" class="view-btn" style="padding: 10px 15px; font-size: 11px;">VIEW DETAILS</a>
+            </div>
+          </div>
+          <div class="dash-card">
+            <img src="assets/a2.webp" alt="Project" class="dash-card-img">
+            <div class="dash-card-body">
+              <span class="status-badge completed">Completed</span>
+              <h3 class="dash-card-title" style="margin-top: 15px;">Lumina Corporate</h3>
+              <p class="dash-card-meta">Location: Berlin<br>Stage: Handover</p>
+              <a href="#" class="view-btn" style="padding: 10px 15px; font-size: 11px;">VIEW ARCHIVE</a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End view-projects -->
+
+      <!-- VIEW: INVOICES -->
+      <div id="view-invoices" class="view-section">
+        <div class="tab-header">
+          <h2>Invoices</h2>
+          <p>Manage your billing and payment history.</p>
+        </div>
+        <div class="data-table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Invoice ID</th>
+                <th>Project</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>INV-1042</td>
+                <td>The Obsidian Villa</td>
+                <td>May 15, 2026</td>
+                <td>$15,000.00</td>
+                <td><span class="status-badge pending">Pending</span></td>
+                <td><a href="#" style="color: #cfa73c; text-decoration: none; font-size: 12px;">PAY NOW</a></td>
+              </tr>
+              <tr>
+                <td>INV-1021</td>
+                <td>The Obsidian Villa</td>
+                <td>Mar 01, 2026</td>
+                <td>$25,000.00</td>
+                <td><span class="status-badge paid">Paid</span></td>
+                <td><a href="#" style="color: #cfa73c; text-decoration: none; font-size: 12px;">DOWNLOAD</a></td>
+              </tr>
+              <tr>
+                <td>INV-0988</td>
+                <td>Lumina Corporate</td>
+                <td>Dec 12, 2025</td>
+                <td>$45,000.00</td>
+                <td><span class="status-badge paid">Paid</span></td>
+                <td><a href="#" style="color: #cfa73c; text-decoration: none; font-size: 12px;">DOWNLOAD</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> <!-- End view-invoices -->
+
+      <!-- VIEW: CONSULTATIONS -->
+      <div id="view-consultations" class="view-section">
+        <div class="tab-header">
+          <h2>Consultations</h2>
+          <p>Upcoming meetings and past discussion notes.</p>
+        </div>
+        <div class="dashboard-bottom-row" style="grid-template-columns: 1fr; margin-top: 0;">
+          <div class="recent-activity">
+            <h3>Upcoming Meetings</h3>
+            <ul class="activity-list">
+              <li>
+                <div class="act-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="act-details">
+                  <h4>Material Selection Review</h4>
+                  <p>Zoom Meeting with Priya Rao</p>
+                </div>
+                <span class="act-time">Tomorrow, 10:00 AM</span>
+              </li>
+            </ul>
+            
+            <h3 style="margin-top: 40px;">Past Consultations</h3>
+            <ul class="activity-list">
+              <li>
+                <div class="act-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                <div class="act-details">
+                  <h4>Initial Concept Presentation</h4>
+                  <p>In-person at Studio</p>
+                </div>
+                <span class="act-time">Apr 15, 2026</span>
+              </li>
+              <li>
+                <div class="act-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                <div class="act-details">
+                  <h4>Site Feasibility Study</h4>
+                  <p>On-site</p>
+                </div>
+                <span class="act-time">Mar 22, 2026</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- End view-consultations -->
+
+      <!-- VIEW: SAVED DESIGNS -->
+      <div id="view-saved" class="view-section">
+        <div class="tab-header">
+          <h2>Saved Inspirations</h2>
+          <p>Your personal moodboard of architectural references.</p>
+        </div>
+        <div class="masonry-grid">
+          <div class="masonry-item"><img src="assets/a1.webp" alt="Inspiration"></div>
+          <div class="masonry-item"><img src="assets/a3.webp" alt="Inspiration"></div>
+          <div class="masonry-item"><img src="assets/a2.webp" alt="Inspiration"></div>
+          <div class="masonry-item"><img src="assets/a4.webp" alt="Inspiration"></div>
+        </div>
+      </div> <!-- End view-saved -->
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- Tab Switching Logic -->
+  <script>
+    document.querySelectorAll('.sidebar-nav .nav-item').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        document.querySelectorAll('.sidebar-nav .nav-item').forEach(l => l.classList.remove('active'));
+        // Add active class to clicked link
+        this.classList.add('active');
+        
+        // Hide all views
+        document.querySelectorAll('.view-section').forEach(view => {
+          view.classList.remove('active');
+        });
+        
+        // Show target view
+        const targetView = this.getAttribute('data-view');
+        document.getElementById(targetView).classList.add('active');
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Initialize hamburger menu and other navbar functions
+      initNavbar();
+      
+      const storedEmail = localStorage.getItem('userEmail');
+      if (storedEmail) {
+        const emailSpans = document.querySelectorAll('.user-email');
+        emailSpans.forEach(span => span.textContent = storedEmail);
+
+        const namePart = storedEmail.split('@')[0];
+        const formattedName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+        
+        const welcomeHeaders = document.querySelectorAll('.welcome-text h1');
+        welcomeHeaders.forEach(h1 => {
+          h1.innerHTML = `Hey, ${formattedName} 👋`;
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

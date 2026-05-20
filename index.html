@@ -15,6 +15,13 @@
   <div id="navbar-container"></div>
 
   <section class="hero">
+    <div class="hero-slider">
+      <div class="slide" style="background-image: url('assets/a1.webp');"></div>
+      <div class="slide" style="background-image: url('assets/a2.webp');"></div>
+      <div class="slide" style="background-image: url('assets/a3.webp');"></div>
+      <div class="slide" style="background-image: url('assets/a4.webp');"></div>
+      <div class="slide" style="background-image: url('assets/a5.webp');"></div>
+    </div>
     <div class="overlay"></div>
 
     <div class="hero-content">
@@ -38,19 +45,19 @@
   <section class="stats-section reveal">
     <div class="stats-grid">
       <div class="stats-item">
-        <h2>12+</h2>
+        <h2 data-target="12" data-suffix="+">0</h2>
         <p>Years of Legacy</p>
       </div>
       <div class="stats-item">
-        <h2>150+</h2>
+        <h2 data-target="150" data-suffix="+">0</h2>
         <p>Bespoke Projects</p>
       </div>
       <div class="stats-item">
-        <h2>25+</h2>
+        <h2 data-target="25" data-suffix="+">0</h2>
         <p>Global Design Awards</p>
       </div>
       <div class="stats-item">
-        <h2>100%</h2>
+        <h2 data-target="100" data-suffix="%">0</h2>
         <p>Visionary Execution</p>
       </div>
     </div>
@@ -60,7 +67,7 @@
   <section class="about-teaser reveal">
     <div class="teaser-grid">
       <div class="teaser-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200"
+        <img src="assets/a6.webp"
           alt="Luxury Architecture Design">
         <div class="teaser-gold-frame"></div>
       </div>
@@ -92,7 +99,7 @@
       <!-- Card 1 -->
       <div class="project-item">
         <div class="project-img-box">
-          <img src="assets/a1.webp" alt="The Obsidian Villa">
+          <img src="assets/a4.webp" alt="The Obsidian Villa">
           <div class="project-hover-overlay">
             <div class="project-meta">
               <span>RESIDENTIAL</span>
@@ -107,7 +114,7 @@
       <!-- Card 2 -->
       <div class="project-item">
         <div class="project-img-box">
-          <img src="assets/a2.webp" alt="Lumina Corporate Tower">
+          <img src="assets/a5.webp" alt="Lumina Corporate Tower">
           <div class="project-hover-overlay">
             <div class="project-meta">
               <span>COMMERCIAL</span>
@@ -122,7 +129,7 @@
       <!-- Card 3 -->
       <div class="project-item">
         <div class="project-img-box">
-          <img src="assets/a3.webp" alt="The Oasis Pavilion">
+          <img src="assets/a7.webp" alt="The Oasis Pavilion">
           <div class="project-hover-overlay">
             <div class="project-meta">
               <span>CULTURAL</span>
@@ -132,6 +139,167 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="home-services reveal">
+    <div class="hs-inner">
+      <div class="section-title">
+        <h4>WHAT WE OFFER</h4>
+        <h2>Our Core Services</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="hs-grid">
+        <div class="hs-card">
+          <div class="hs-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 9 12 2 21 9 21 20 3 20 3 9"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Architectural Design</h3>
+          <p>From concept sketches to final blueprints, we create structures that balance form, function, and beauty with precision.</p>
+          <a href="services.html" class="hs-link">Learn More →</a>
+        </div>
+        <div class="hs-card">
+          <div class="hs-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Interior Design</h3>
+          <p>Curated interiors that reflect your personality — blending materials, light, and texture into living works of art.</p>
+          <a href="services.html" class="hs-link">Learn More →</a>
+        </div>
+        <div class="hs-card">
+          <div class="hs-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Landscape Design</h3>
+          <p>Outdoor spaces designed as extensions of the architecture — sculpted gardens, water features, and natural sanctuaries.</p>
+          <a href="services.html" class="hs-link">Learn More →</a>
+        </div>
+        <div class="hs-card">
+          <div class="hs-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+          </div>
+          <h3>Urban Planning</h3>
+          <p>Holistic community and city-scale planning that creates thriving, sustainable, and human-centred environments.</p>
+          <a href="services.html" class="hs-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="home-process reveal">
+    <div class="hp-inner">
+      <div class="section-title">
+        <h4>HOW WE WORK</h4>
+        <h2>Our Design Process</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="hp-steps">
+        <div class="hp-step">
+          <div class="hp-num">01</div>
+          <h3>Discovery</h3>
+          <p>We immerse ourselves in your vision, lifestyle, and goals through in-depth consultations and site analysis.</p>
+        </div>
+        <div class="hp-connector"></div>
+        <div class="hp-step">
+          <div class="hp-num">02</div>
+          <h3>Concept</h3>
+          <p>Our designers develop bold schematic concepts, mood boards, and spatial studies tailored to your brief.</p>
+        </div>
+        <div class="hp-connector"></div>
+        <div class="hp-step">
+          <div class="hp-num">03</div>
+          <h3>Design</h3>
+          <p>Detailed architectural drawings, material selections, and 3D visualizations bring the concept to life.</p>
+        </div>
+        <div class="hp-connector"></div>
+        <div class="hp-step">
+          <div class="hp-num">04</div>
+          <h3>Delivery</h3>
+          <p>We oversee construction, coordinate contractors, and ensure flawless execution of every detail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="home-testimonials reveal">
+    <div class="ht-inner">
+      <div class="section-title">
+        <h4>CLIENT VOICES</h4>
+        <h2>What Our Clients Say</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="ht-grid">
+        <div class="ht-card">
+          <div class="ht-stars">★★★★★</div>
+          <p>"Stackly transformed our vision into a masterpiece. The attention to detail, materials, and spatial flow is beyond anything we imagined. Truly world-class."</p>
+          <div class="ht-author">
+            <div class="ht-avatar">R</div>
+            <div>
+              <h4>Rajan Mehta</h4>
+              <span>CEO, Lumina Group</span>
+            </div>
+          </div>
+        </div>
+        <div class="ht-card ht-card--featured">
+          <div class="ht-stars">★★★★★</div>
+          <p>"Working with Stackly was effortless. Their team listened, understood our culture, and designed a headquarters that inspires our entire workforce every single day."</p>
+          <div class="ht-author">
+            <div class="ht-avatar">S</div>
+            <div>
+              <h4>Sarah Al-Rashid</h4>
+              <span>Founder, Verdant Realty</span>
+            </div>
+          </div>
+        </div>
+        <div class="ht-card">
+          <div class="ht-stars">★★★★★</div>
+          <p>"The landscape and interior synergy they achieved for our estate is phenomenal. Every guest who visits is left speechless. Stackly simply delivers excellence."</p>
+          <div class="ht-author">
+            <div class="ht-avatar">M</div>
+            <div>
+              <h4>Marcus Hale</h4>
+              <span>Private Homeowner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Marquee -->
+  <section class="home-marquee">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>AIA Design Award</span><span class="dot">◆</span>
+        <span>World Architecture Festival</span><span class="dot">◆</span>
+        <span>RIBA International Prize</span><span class="dot">◆</span>
+        <span>Dezeen Award — Best Residential</span><span class="dot">◆</span>
+        <span>Architectural Digest Top 100</span><span class="dot">◆</span>
+        <span>Green Building Excellence</span><span class="dot">◆</span>
+        <span>AIA Design Award</span><span class="dot">◆</span>
+        <span>World Architecture Festival</span><span class="dot">◆</span>
+        <span>RIBA International Prize</span><span class="dot">◆</span>
+        <span>Dezeen Award — Best Residential</span><span class="dot">◆</span>
+        <span>Architectural Digest Top 100</span><span class="dot">◆</span>
+        <span>Green Building Excellence</span><span class="dot">◆</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="home-cta">
+    <div class="hc-overlay"></div>
+    <div class="hc-content reveal">
+      <h4>READY TO BUILD YOUR LEGACY?</h4>
+      <h2>Let's Create Something<br><span>Extraordinary</span> Together</h2>
+      <p>From the first sketch to the final stone, Stackly Architecture turns your boldest vision into a timeless reality. Reach out today and begin your journey.</p>
+      <div class="hc-actions">
+        <a href="contact.html" class="hc-btn-primary">Start Your Project</a>
+        <a href="project.html" class="hc-btn-outline">View Our Work</a>
       </div>
     </div>
   </section>

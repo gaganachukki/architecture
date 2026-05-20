@@ -5,7 +5,7 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 
 /* HERO */
 .blog-hero{
-  min-height:70vh;background:url('assets/a3.webp') center/cover no-repeat;
+  min-height:70vh;background:url('assets/a27.webp') center/cover no-repeat;
   position:relative;display:flex;align-items:center;padding:160px 80px 80px;
 }
 .blog-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.88),rgba(0,0,0,.3));}

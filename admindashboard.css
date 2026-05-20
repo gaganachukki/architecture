@@ -1,0 +1,3 @@
+/* admindashboard.css shares exactly the same core layout structure as userdashboard.css 
+   so we import it to keep the design system consistent across both dashboards as requested. */
+@import url('userdashboard.css');
