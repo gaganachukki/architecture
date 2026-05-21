@@ -160,6 +160,45 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="testimonials-section reveal">
+  <div class="section-label">Client Voices</div>
+  <h2 class="section-title">Words of Trust</h2>
+  <div class="gold-line"></div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="quote-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      </div>
+      <p>"Stackly completely transformed our vision into a tangible masterpiece. Their attention to detail and understanding of materials is unmatched in the industry."</p>
+      <div class="client-info">
+        <h4>Elena Rostova</h4>
+        <span>CEO, Meridian Holdings</span>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="quote-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      </div>
+      <p>"Working with this studio was a revelation. They don't just build structures; they craft experiences. The spatial harmony they achieved in our new headquarters is breathtaking."</p>
+      <div class="client-info">
+        <h4>James Arlington</h4>
+        <span>Founder, Arlington Estates</span>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="quote-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      </div>
+      <p>"Their dedication to contextual integrity meant our coastal retreat feels like it naturally emerged from the cliffs. It's a sanctuary that honors its surroundings."</p>
+      <div class="client-info">
+        <h4>Sophia Chen</h4>
+        <span>Private Client</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="footer-grid">
@@ -185,10 +224,11 @@
   fetch('navbar.html').then(r=>r.text()).then(d=>{document.getElementById('navbar-container').innerHTML=d;});
   // Scroll reveal
   const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});
-  document.querySelectorAll('.value-card,.team-card,.timeline-item').forEach(el=>obs.observe(el));
+  document.querySelectorAll('.value-card,.team-card,.timeline-item,.testimonial-card').forEach(el=>obs.observe(el));
   // Stagger delays
   document.querySelectorAll('.value-card').forEach((c,i)=>c.style.transitionDelay=i*0.1+'s');
   document.querySelectorAll('.team-card').forEach((c,i)=>c.style.transitionDelay=i*0.1+'s');
+  document.querySelectorAll('.testimonial-card').forEach((c,i)=>c.style.transitionDelay=i*0.1+'s');
 </script>
 <script src="script.js"></script>
 </body>

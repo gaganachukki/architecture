@@ -123,6 +123,21 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
 .timeline-content h3{font-family:'Syne',sans-serif;color:#fff;font-size:20px;margin-bottom:10px;}
 .timeline-content p{font-size:14px;color:#999;line-height:1.8;}
 
+/* ─── TESTIMONIALS ──────────────────────────────────── */
+.testimonials-section{padding:100px 80px;background:#111;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px;}
+.testimonial-card{
+    background:#161616;border:1px solid rgba(207,167,60,.1);padding:40px;
+    border-radius:4px;transition:all .4s;
+    opacity:0;transform:translateY(40px);
+}
+.testimonial-card.visible{opacity:1;transform:translateY(0);}
+.testimonial-card:hover{border-color:#cfa73c;transform:translateY(-8px);}
+.quote-icon{color:#cfa73c;opacity:0.4;margin-bottom:20px;}
+.testimonial-card p{font-size:15px;line-height:1.9;color:#ccc;margin-bottom:30px;font-style:italic;}
+.client-info h4{font-family:'Syne',sans-serif;color:#fff;font-size:16px;margin-bottom:5px;}
+.client-info span{color:#cfa73c;font-size:12px;letter-spacing:1px;text-transform:uppercase;}
+
 /* ─── ANIMATIONS ─────────────────────────────────── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
@@ -131,21 +146,22 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;}
     .values-grid{grid-template-columns:1fr 1fr;}
     .story-section{grid-template-columns:1fr;gap:40px;padding:100px 40px;}
     .team-grid{grid-template-columns:1fr 1fr;}
+    .testimonials-grid{grid-template-columns:1fr 1fr;}
     .timeline::before{left:20px;}
     .timeline-item,.timeline-item:nth-child(even){flex-direction:column;transform:translateX(0);padding-left:50px;}
     .timeline-year{font-size:28px;}
-    .about-hero,.values-section,.team-section,.timeline-section{padding:160px 40px 80px;}
+    .about-hero,.values-section,.team-section,.timeline-section,.testimonials-section{padding:160px 40px 80px;}
 }
 @media(max-width:768px){
-    .about-hero,.values-section,.story-section,.team-section,.timeline-section{padding:130px 25px 60px;}
+    .about-hero,.values-section,.story-section,.team-section,.timeline-section,.testimonials-section{padding:130px 25px 60px;}
     .about-hero-content h1{font-size:clamp(36px,8vw,52px);}
     .stat-row{flex-direction:column;gap:25px;}
     .story-img img{height:350px;}
     .story-img::after{display:none;}
 }
 @media(max-width:576px){
-    .about-hero,.values-section,.story-section,.team-section,.timeline-section{padding:120px 20px 60px;}
-    .values-grid,.team-grid{grid-template-columns:1fr;}
+    .about-hero,.values-section,.story-section,.team-section,.timeline-section,.testimonials-section{padding:120px 20px 60px;}
+    .values-grid,.team-grid,.testimonials-grid{grid-template-columns:1fr;}
     .team-card img{height:220px;}
     .about-hero-content p{font-size:15px;}
     .hero-cta{padding:14px 28px;font-size:12px;}
