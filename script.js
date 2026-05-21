@@ -5,7 +5,7 @@
 // Function to update the active navigation link based on current page URL
 function updateActiveLink() {
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
-    const navLinks = document.querySelectorAll("nav a");
+    const navLinks = document.querySelectorAll("nav:not(.sidebar-nav) a");
     
     navLinks.forEach(link => {
         const href = link.getAttribute("href");

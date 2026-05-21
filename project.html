@@ -30,13 +30,12 @@
     <button class="filter-btn active">All</button>
     <button class="filter-btn">Residential</button>
     <button class="filter-btn">Commercial</button>
-    <button class="filter-btn">Cultural</button>
     <button class="filter-btn">Urban</button>
   </div>
 
   <div class="projects-masonry">
     <!-- Large card -->
-    <div class="proj-card large">
+    <div class="proj-card large" data-category="residential">
       <img src="assets/a16.webp" alt="The Obsidian Villa">
       <div class="proj-overlay">
         <span>Residential</span>
@@ -46,8 +45,8 @@
       </div>
     </div>
 
-    <div class="proj-card">
-      <img src="assets/a17.webp" alt="Lumina Tower">
+    <div class="proj-card" data-category="commercial">
+      <img src="assets/a39.webp" alt="Lumina Tower">
       <div class="proj-overlay">
         <span>Commercial</span>
         <h3>Lumina Corporate Tower</h3>
@@ -56,17 +55,17 @@
       </div>
     </div>
 
-    <div class="proj-card">
+    <div class="proj-card" data-category="urban">
       <img src="assets/a18.webp" alt="The Oasis Pavilion">
       <div class="proj-overlay">
-        <span>Cultural</span>
+        <span>Urban</span>
         <h3>The Oasis Pavilion</h3>
         <p>A sculptural community dome using natural curved panels and integrated biophilic gardens for civic gathering.</p>
         <a href="404.html" class="proj-link">View Case Study</a>
       </div>
     </div>
 
-    <div class="proj-card">
+    <div class="proj-card" data-category="residential">
       <img src="assets/a19.webp" alt="Meridian Residence">
       <div class="proj-overlay">
         <span>Residential</span>
@@ -77,7 +76,7 @@
     </div>
 
     <!-- Large card -->
-    <div class="proj-card large">
+    <div class="proj-card large" data-category="urban">
       <img src="assets/a20.webp" alt="Nova Mixed Use">
       <div class="proj-overlay">
         <span>Urban</span>
@@ -87,22 +86,63 @@
       </div>
     </div>
 
-    <div class="proj-card">
+    <div class="proj-card" data-category="urban">
       <img src="assets/a21.webp" alt="Heritage Museum">
       <div class="proj-overlay">
-        <span>Cultural</span>
+        <span>Urban</span>
         <h3>Heritage Museum Wing</h3>
         <p>A sensitively crafted new wing that extends a 19th century museum without interrupting its historic character.</p>
         <a href="404.html" class="proj-link">View Case Study</a>
       </div>
     </div>
 
-    <div class="proj-card">
+    <div class="proj-card" data-category="residential">
       <img src="assets/a22.webp" alt="Skyline Residences">
       <div class="proj-overlay">
         <span>Residential</span>
         <h3>Skyline Residences</h3>
         <p>A vertical community of 80 curated apartments designed around shared sky gardens and light-filled communal spaces.</p>
+        <a href="404.html" class="proj-link">View Case Study</a>
+      </div>
+    </div>
+
+    <!-- Added Building Photos -->
+    <div class="proj-card large" data-category="commercial">
+      <img src="assets/a1.webp" alt="Metropolis Center">
+      <div class="proj-overlay">
+        <span>Commercial</span>
+        <h3>Metropolis Center</h3>
+        <p>A sprawling commercial hub redefining the city skyline with sustainable materials.</p>
+        <a href="404.html" class="proj-link">View Case Study</a>
+      </div>
+    </div>
+
+    <div class="proj-card" data-category="urban">
+      <img src="assets/a2.webp" alt="Civic Square">
+      <div class="proj-overlay">
+        <span>Urban</span>
+        <h3>Civic Square</h3>
+        <p>A modern civic center designed for public engagement and cultural events.</p>
+        <a href="404.html" class="proj-link">View Case Study</a>
+      </div>
+    </div>
+
+    <div class="proj-card" data-category="residential">
+      <img src="assets/a3.webp" alt="Green Valley Home">
+      <div class="proj-overlay">
+        <span>Residential</span>
+        <h3>Green Valley Home</h3>
+        <p>Sustainable living integrated with nature, featuring green roofs and open spaces.</p>
+        <a href="404.html" class="proj-link">View Case Study</a>
+      </div>
+    </div>
+
+    <div class="proj-card" data-category="commercial">
+      <img src="assets/a4.webp" alt="Tech Hub HQ">
+      <div class="proj-overlay">
+        <span>Commercial</span>
+        <h3>Tech Hub HQ</h3>
+        <p>State-of-the-art office spaces designed for the next generation of tech innovators.</p>
         <a href="404.html" class="proj-link">View Case Study</a>
       </div>
     </div>
@@ -187,7 +227,21 @@
   fetch('navbar.html').then(r=>r.text()).then(d=>{document.getElementById('navbar-container').innerHTML=d;});
   // Filter buttons
   document.querySelectorAll('.filter-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.textContent.trim().toLowerCase();
+      document.querySelectorAll('.proj-card').forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(40px)';
+        }
+      });
+    });
   });
   // Scroll reveal
   const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.1});

@@ -36,6 +36,11 @@
     transition: all 0.3s ease;
 }
 
+.brand-col .footer-logo:hover {
+    transform: scale(1.05) translateY(-2px);
+    opacity: 0.9;
+}
+
 .brand-col .footer-logo img {
     height: 40px;
     width: auto;

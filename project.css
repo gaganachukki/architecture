@@ -41,9 +41,11 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;word-wrap
 .proj-card{
   position:relative;overflow:hidden;border-radius:2px;cursor:pointer;
   opacity:0;transform:translateY(40px);transition:all .5s;
+  display:flex;
+  flex-direction:column;
 }
 .proj-card.visible{opacity:1;transform:translateY(0);}
-.proj-card img{width:100%;height:320px;object-fit:cover;transition:transform .6s ease;}
+.proj-card img{width:100%;height:100%;min-height:320px;object-fit:cover;transition:transform .6s ease;}
 .proj-card:hover img{transform:scale(1.08);}
 .proj-overlay{
   position:absolute;inset:0;
@@ -63,7 +65,7 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;word-wrap
 
 /* LARGE FEATURE CARDS */
 .proj-card.large{grid-column:span 2;}
-.proj-card.large img{height:480px;}
+.proj-card.large img{min-height:480px;}
 
 /* AWARDS STRIP */
 .awards-strip{padding:80px;background:#111;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:80px;overflow:hidden;}
@@ -106,8 +108,8 @@ body{background:#0d0d0d;color:#ccc;font-family:'Montserrat',sans-serif;word-wrap
   .projects-hero,.projects-section,.testimonial-section{padding:120px 20px 60px;}
   .projects-masonry{grid-template-columns:1fr;}
   .proj-card.large{grid-column:span 1;}
-  .proj-card.large img{height:280px;}
-  .proj-card img{height:260px;}
+  .proj-card.large img{min-height:280px;}
+  .proj-card img{min-height:260px;}
   .testimonial-grid{grid-template-columns:1fr;}
   .awards-strip{padding:40px 20px;gap:20px;}
   .proj-overlay{opacity:1;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.3) 60%,transparent 100%);}

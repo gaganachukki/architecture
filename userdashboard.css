@@ -651,10 +651,10 @@ body {
     height: 100vh;
     background-color: #161616;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 30px 0;
+    padding: 20px 0;
     z-index: 1000;
     transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: auto;
+    overflow: hidden;
     flex-direction: column;
   }
 
@@ -664,18 +664,19 @@ body {
 
   .sidebar-logo {
     padding: 0 30px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .sidebar-nav {
     display: flex;
     flex-direction: column;
     flex: 1;
+    justify-content: center;
   }
   
   .nav-item {
-    padding: 16px 30px;
-    font-size: 12px;
+    padding: 12px 30px;
+    font-size: 13px;
   }
   
   .nav-item.active::before {
@@ -691,7 +692,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0 30px;
-    gap: 30px;
+    gap: 15px;
   }
   
   .logout-link {
@@ -704,7 +705,7 @@ body {
   }
   
   .sidebar-btn {
-    padding: 14px 20px;
+    padding: 10px 20px;
     font-size: 13px;
   }
 
@@ -712,7 +713,6 @@ body {
     padding: 30px 20px;
     overflow-y: auto;
     flex: 1;
-    max-height: calc(100vh - 60px);
   }
 
   .topbar {
