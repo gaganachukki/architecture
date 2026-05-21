@@ -118,8 +118,15 @@
       let isValid = true;
 
       // Validate Email
-      if (!emailInput.value.trim()) {
+      const emailValue = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailValue) {
         emailError.textContent = '(required field fill)';
+        emailError.style.display = 'block';
+        emailInput.classList.add('input-error');
+        isValid = false;
+      } else if (!emailRegex.test(emailValue)) {
+        emailError.textContent = 'Please enter a valid email address';
         emailError.style.display = 'block';
         emailInput.classList.add('input-error');
         isValid = false;
@@ -129,8 +136,14 @@
       }
 
       // Validate Password
-      if (!passwordInput.value.trim()) {
+      const passwordValue = passwordInput.value.trim();
+      if (!passwordValue) {
         passwordError.textContent = '(required field fill)';
+        passwordError.style.display = 'block';
+        passwordInput.classList.add('input-error');
+        isValid = false;
+      } else if (passwordValue.length < 6) {
+        passwordError.textContent = 'Password must be at least 6 characters';
         passwordError.style.display = 'block';
         passwordInput.classList.add('input-error');
         isValid = false;
